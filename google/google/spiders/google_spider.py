@@ -1,16 +1,18 @@
 import scrapy
 from ..items import GoogleItem
+from ..main import AskQuestion
 
 
 
 class QuotesSpider(scrapy.Spider):
+
     name = "google"
-    # urls = [
-    #          'https://www.google.com/search?q=python',
-    #      ]
     def start_requests(self):
+
+        route = 'https://www.google.com/search?q=' + AskQuestion.website
+
         urls = [
-            'https://www.google.com/search?q=python',
+            str(route)
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)

@@ -7,6 +7,5 @@ import scrapy
 
 
 class GoogleItem(scrapy.Item):
-    name = scrapy.Field()
-    title = scrapy.Field()
-    description = scrapy.Field()
+        name = scrapy.Field()
+        title = scrapy.Field()
